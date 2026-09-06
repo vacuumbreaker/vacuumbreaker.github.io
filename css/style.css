@@ -131,6 +131,7 @@ ul { list-style: none; }
 
 /* ---------------- 区块通用 ---------------- */
 section.block { padding: 84px 0; }
+section.block.tinted { background: rgba(13, 19, 44, 0.55); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-head { text-align: center; margin-bottom: 52px; }
 .section-head .kicker {
   display: inline-block; font-size: 13px; letter-spacing: 0.22em;
@@ -154,6 +155,18 @@ section.block { padding: 84px 0; }
 .interest-tags li:hover {
   color: #fff; border-color: rgba(79, 209, 255, 0.5); background: rgba(79, 209, 255, 0.12);
 }
+
+/* 招聘页前沿视觉带 */
+.frontier-grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.frontier-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.frontier-card:hover { transform: translateY(-6px); border-color: rgba(79, 209, 255, 0.5); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); }
+.frontier-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.frontier-card figcaption { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 5px; }
+.frontier-card strong { color: #fff; font-size: 15px; }
+.frontier-card span { color: var(--text-dim); font-size: 13px; line-height: 1.6; }
 
 .card {
   background: var(--bg-card); border: 1px solid var(--border);
@@ -204,6 +217,12 @@ section.block { padding: 84px 0; }
 .member h3 { color: #fff; font-size: 17px; }
 .member .role { color: var(--accent); font-size: 13px; margin-top: 4px; letter-spacing: 0.05em; }
 .member .bio { color: var(--text-dim); font-size: 13.5px; margin-top: 10px; }
+a.member-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+.member-more {
+  display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--accent);
+  opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.25s;
+}
+.member-link:hover .member-more { opacity: 1; transform: none; }
 
 /* ---------------- 论文列表 ---------------- */
 .pub-list { display: grid; gap: 18px; }
@@ -215,6 +234,7 @@ section.block { padding: 84px 0; }
 .pub-item:hover { transform: translateX(4px); }
 .pub-item .title { color: #fff; font-weight: 600; font-size: 16.5px; }
 .pub-item .authors { color: var(--text-dim); font-size: 14px; margin-top: 6px; }
+.pub-item .authors strong { color: var(--accent); font-weight: 600; }
 .pub-item .meta { margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; font-size: 13px; }
 .pub-item .journal { color: var(--accent); font-style: italic; }
 .pub-item .year-badge, .note-badge {
@@ -222,6 +242,10 @@ section.block { padding: 84px 0; }
   background: rgba(79, 209, 255, 0.13); color: var(--accent);
 }
 .note-badge { background: rgba(245, 168, 107, 0.14); color: var(--accent-3); }
+.cite-badge {
+  padding: 2px 12px; border-radius: 999px; font-size: 12px;
+  background: rgba(139, 124, 248, 0.16); color: #b9adff;
+}
 
 .year-group-title {
   color: #fff; font-size: 20px; margin: 34px 0 16px;

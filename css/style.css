@@ -65,12 +65,20 @@ ul { list-style: none; }
 }
 .logo-text .zh { font-size: 12px; color: var(--text-dim); font-weight: 400; }
 
-.main-nav ul { display: flex; gap: 6px; }
+.main-nav ul { display: flex; gap: 6px; align-items: center; }
 .main-nav a {
   display: block; padding: 8px 16px; border-radius: 999px;
   color: var(--text-dim); font-size: 15px; transition: all 0.25s;
 }
 .main-nav a:hover, .main-nav a.active { color: #fff; background: rgba(79, 209, 255, 0.12); }
+
+#langToggle {
+  flex: none; padding: 6px 14px; border-radius: 999px; margin-left: 8px;
+  background: rgba(79, 209, 255, 0.10); border: 1px solid rgba(79, 209, 255, 0.30);
+  color: var(--accent); font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all 0.25s;
+}
+#langToggle:hover { background: rgba(79, 209, 255, 0.20); color: #fff; }
 
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px; cursor: pointer;
